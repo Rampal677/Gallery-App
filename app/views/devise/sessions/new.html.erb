@@ -2,7 +2,7 @@
 <div class=" container  mt-5">
   <div class="box shadow-inner  mt-2" >
     <div class="fm ms-5">
-      <h2 class=" my-3 text-center">Log in</h2>
+      <h2 class=" text-center">Log in</h2>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field mt-5">
           <%= f.email_field :email, autofocus: true, autocomplete: "email",class:"form-control",placeholder:'rampal123@gmail.com..' %>
@@ -20,8 +20,9 @@
           <%= f.submit "Log in" %>
         </div>
       <% end %>
-      <div class="">
-      <%= render "devise/shared/links" %></div>
+      <div class="mt-2">
+      <%= render "devise/shared/links" %>
+      </div>
     </div>
   </div>
 </div>

@@ -52,7 +52,7 @@ div {
 
 .box {
   padding-top: 10px;
-  background-color: #fbaf0ac6;
+  background-color: #fff1d4f3;
   box-sizing: content-box;
   width: 60%;
   margin: auto;
@@ -63,7 +63,7 @@ div {
 }
 
 .form-control {
-  width: 300px;
+  width: 670px;
 }
 
 .fm {
