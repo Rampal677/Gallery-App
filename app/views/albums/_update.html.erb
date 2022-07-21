@@ -1,0 +1,30 @@
+
+<div class="mx-5">
+<%= form_with model: @albums do |form|%>
+<div>
+<div class="field form-group form-g">
+   <%=form.number_field :user_id , id: :album_user_id, type: :hidden, class: 'form-control', value: current_user.id %>
+</div>
+<h3><%= form.label :name %></h3>
+<div><%= form.text_field :name %></div>
+</div>
+<div>
+<div>
+<h3><%= form.label :images %></h3>
+<div><%= form.file_field :images, multiple: true, direct_upload: true %></div>
+</div>
+<br>
+<div>
+<h3><%= form.label :publish %></h3>
+<div><%= form.check_box :publish  %></div>
+<p>*fill publish if you want publicly show your album</p>
+</div>
+
+
+
+<br>
+
+<%= form.submit style:'background-color:green'%><br>
+<% end %>
+<div class="my-5"></div>
+</div>

@@ -1,0 +1,55 @@
+
+<div class="container ">
+
+  <%# ------------------------------publish row------------------------------------ %>
+  <div class="row">
+    <h1 class="text-center my-5">Published</h1>
+    <hr>
+    <% @publish_albums.each do |parm|%>
+      <div class="col">
+        <div class="card py-3 " style="height: 31rem;width:20rem" >
+          <a href="/albums/<%=parm.id%>"> <img src="<%= url_for(parm.cover)%>" class="card-img-top" style="width:250px ; height:230px" alt="Fissure in Sandstone"/></a>
+            <div class="card-body">
+              <h5 class="card-title">Author: <%=  parm.name%></h5>
+              <h5 class="card-title">Price: ₹<%=  parm.price%></h5>
+              <p class="card-text">Dsc: <%= parm.description%></p>
+              <% if parm.publish == true%>
+                <h5 class="card-title">Status: Published</h5>
+              <%else%>
+                <h5 class="card-title">Status: Unpublished</h5>
+              <%end%>
+            </div>
+        </div>
+        <br>
+      </div>
+    <% end %>
+  </div>
+  <hr>
+  <%# ------------------------------------unpublish_albums row--------------- %>
+  <div class="row">
+    <h1 class="text-center my-5">Unpublished</h1>
+    <% @unpublish_albums.each do |parm|%>
+      <div class="col">
+      <div class="card py-3 px-3 m-2 " style="width:250px ">
+        <a href="/albums/<%=parm.id%>"> <img src="<%= url_for(parm.cover)%>" class="card-img-top" style="width:200px ; height:200px" alt="Fissure in Sandstone"/></a>
+        <div class="card-body">
+          <h5 class="card-title">Author: <%=  parm.name%></h5>
+          <h5 class="card-title">Price: ₹<%=  parm.price%></h5>
+          <p class="card-text">Dsc: <%= parm.description%></p>
+          <% if parm.publish == true%>
+            <h5 class="card-title">Status: Published</h5>
+          <%else%>
+            <h5 class="card-title">Status: Unpublished</h5>
+          <%end%>
+        </div>
+      </div>
+      <br>
+      </div>
+    <% end %>
+  </div>
+  <hr>
+  <div class="mx-2"style="height:10rem">
+    </div>
+</div>
+
+

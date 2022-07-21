@@ -1,0 +1,72 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+.shw {
+  text-align: center;
+}
+
+.card {
+  /* background-color: rgb(176, 210, 176); */
+  text-align: center;
+  overflow-x: hidden;
+  background-color: #166d3b;
+  background-image: linear-gradient(147deg, #166d3b 0%, #000000 74%);
+  color: white;
+}
+
+#sticky-footer {
+  background-color: #166d3b;
+}
+
+.navbar {
+  background-color: #166d3b;
+}
+
+.field,
+.actions,
+.links {
+  text-align: center;
+}
+
+div {
+  width: 100%;
+}
+
+.tbtn {
+  text-align: center;
+  margin: auto;
+}
+
+.box {
+  padding-top: 10px;
+  background-color: #fbaf0ac6;
+  box-sizing: content-box;
+  width: 60%;
+  margin: auto;
+  -webkit-box-shadow: -23px -17px 28px -1px rgba(0, 0, 0, 0.29);
+  -moz-box-shadow: -23px -17px 28px -1px rgba(0, 0, 0, 0.29);
+  box-shadow: -23px -17px 28px -1px rgba(0, 0, 0, 0.29);
+  border-radius: 50px;
+}
+
+.form-control {
+  width: 300px;
+}
+
+.fm {
+  margin-left: auto;
+  margin-right: auto;
+}

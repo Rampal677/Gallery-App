@@ -1,0 +1,47 @@
+
+<div class="container shw ">
+<a href="/albums/<%=@albums.id%>"> <img src="<%= url_for(@albums.cover)%>" class="mt-2 rounded-circle" style="width:250px ; height:230px" alt="Fissure in Sandstone"/></a>
+
+  <h3 class="text-center mt-2">Author: <%= @albums.name %></h3>
+  <br>
+  <hr>
+  <div class=row>
+    <% @albums.images.each do |image|%>
+    <div class="col">
+      <br>
+      <div class="card2 " style="height: 15rem;width:12rem">
+        <img class="" src="<%= url_for(image)%>" style="height:200px;width:200px">
+        <div class="card-body ">
+        <%if user_signed_in? && @albums.user_id == current_user.id %>
+          <%= button_to delete_image_attached_album_path(image.id), method: :delete,  class:"btn btn-danger tbtn " , style:"float: right;" do %>
+          <i class="fas fa-trash"></i>
+          <%end%>
+          <%end%>
+        </div>
+      </div>
+    </div>
+    <%end%>
+  </div>
+  <br>
+  <hr>
+  <div class="row ">
+    <div class="col ">
+      <div class="text-center">
+        <% if user_signed_in?%>
+        <% if @albums.user_id == current_user.id%>
+        <div class=" btn-group  mb-5 butn " style="width:16rem" role="group" aria-label="Basic mixed styles example">
+          <button type="button" class="btn btn-danger"><%= link_to "Destroy", album_path(@albums), data: {
+            turbo_method: :delete,
+            turbo_confirm: "Are you sure?"}%>
+          </button>
+          <button type="button" class="btn btn-warning" href=""><div class="btn"><%= link_to "Edit", edit_album_path(@albums) %></div></button>
+        </div>
+        <%end%>
+        <%end%>
+      </div>
+    </div>
+    <div class="mx-2"style="height:10rem">
+    </div>
+  </div>
+</div>
+

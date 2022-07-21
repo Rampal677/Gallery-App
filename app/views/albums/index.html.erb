@@ -1,0 +1,50 @@
+
+
+<div class="container-fluid">
+  <div class="row ">
+      <div class="col">
+          <h1 class="text-center my-2">Published Albums</h1>
+          <div class="text-center">
+            <%= search_form_for @q do |f| %>
+            <%= f.search_field :tags_name_cont, placeholder: "search by tag" %>
+            <%= f.search_field :name_cont , placeholder: "search by name" %>
+            <%= f.submit style:'background-color:green' %>
+            <% end %>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row py-4">
+    <hr>
+    <% @albums.each do |parm|%>
+      <div class="col my-2">
+        <div class="card py-3" style="height: 31rem;width:20rem">
+          <a href="/albums/<%=parm.id%>"> <img src="<%= url_for(parm.cover)%>" class="card-img-top" style="width:250px ; height:230px" alt="Fissure in Sandstone"/></a>
+          <div class="card-body">
+            <h5 class="card-title">Author: <%=  parm.name%></h5>
+            <h5 class="card-title">Price: ₹<%=  parm.price%></h5>
+            <p class="card-text">Dsc: <%= parm.description%></p>
+            <% if user_signed_in?%>
+            <%if parm.user_id == current_user.id%>
+            <div class=" btn-group  butn " role="group" style="width:10rem" aria-label="Basic mixed styles example">
+              <button type="button" class="btn btn-danger"><%= link_to "Destroy", album_path(parm), data: {
+                turbo_method: :delete,
+                turbo_confirm: "Are you sure?"}%>
+              </button>
+              <button type="button" class="btn btn-warning" href=""><div class="btn"><%= link_to "Edit", edit_album_path(parm) %></div></button>
+            </div>
+            <%end%>
+            <%end%>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <%= paginate @albums %>
+  <hr>
+  <div class="mx-2"style="height:10rem">
+  </div>
+</div>
+
+

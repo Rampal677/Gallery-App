@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-success">
+  <div class="container-fluid">
+    <a class="navbar-brand "style="color:pink; " href="#">Book-Gallery</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+        <li class="nav-item">
+          <a class="nav-link active " aria-current="page" href="/albums">Home</a>
+        </li><% if user_signed_in?%>
+        <li class="nav-item">
+          <a class="nav-link active " aria-current="page" href="/albums/myalbum">Myalbum</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/albums/new">Create</a>
+        </li>
+        <% end%>
+        <li class="nav-item ms-5 me-lg-1  ">
+        </li>
+      </ul>
+      <a class="nav-link d-sm-flex align-items-sm-center text-dark" href="/users/sign_in">
+        <img
+          src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp"
+          class="rounded-circle"
+          height="22"
+          alt="Black and White Portrait of a Man"
+          loading="lazy"/>
+        <strong class="d-none d-sm-block ms-1 "> <% if user_signed_in?%>
+          <%= current_user.email  %>
+          <%else%>
+          <b>Login</b>
+          <%end%>
+        </strong>
+      </a>
+      <% if user_signed_in?%>
+      <%= link_to "Logout " , destroy_user_session_path, data: {
+      turbo_method: :delete,
+      turbo_confirm: "Are you sure?"
+      },style:'color:black; text-decoration:none' %>
+      <%end%>
+    </div>
+  </div>
+</nav>
