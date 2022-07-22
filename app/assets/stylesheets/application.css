@@ -20,6 +20,8 @@
 
 .card {
   /* background-color: rgb(176, 210, 176); */
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
   overflow-x: hidden;
   background-color: #166d3b;
