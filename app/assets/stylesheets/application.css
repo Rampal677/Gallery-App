@@ -47,22 +47,22 @@ div {
   width: 100%;
 }
 
-.tbtn {
-  text-align: center;
-  margin: auto;
-}
-
 .box {
   margin-left: auto;
   margin-right: auto;
   padding-top: 10px;
-  background-color: #8ab948c6;
+  background-color: #f2ffe8c6;
   -sizing: content-box;
   width: 80%;
   -webkit-box-shadow: -23px -17px 28px -1px rgba(0, 0, 0, 0.29);
   -moz-box-shadow: -23px -17px 28px -1px rgba(0, 0, 0, 0.29);
   box-shadow: -23px -17px 28px -1px rgba(0, 0, 0, 0.29);
   border-radius: 50px;
+}
+
+.card2 {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .fm {
