@@ -51,22 +51,25 @@ div {
 }
 
 .box {
+  margin-left: auto;
+  margin-right: auto;
   padding-top: 10px;
-  background-color: #fff1d4f3;
-  box-sizing: content-box;
-  width: 60%;
-  margin: auto;
+  background-color: #8ab948c6;
+  -sizing: content-box;
+  width: 80%;
   -webkit-box-shadow: -23px -17px 28px -1px rgba(0, 0, 0, 0.29);
   -moz-box-shadow: -23px -17px 28px -1px rgba(0, 0, 0, 0.29);
   box-shadow: -23px -17px 28px -1px rgba(0, 0, 0, 0.29);
   border-radius: 50px;
 }
 
-.form-control {
-  width: 670px;
-}
-
 .fm {
   margin-left: auto;
   margin-right: auto;
+}
+
+.form-control {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
