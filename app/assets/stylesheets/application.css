@@ -55,7 +55,7 @@ div {
   margin-right: auto;
   padding-top: 10px;
   background-color: #8ab948c6;
-  box-sizing: content-box;
+  -sizing: content-box;
   width: 80%;
   -webkit-box-shadow: -23px -17px 28px -1px rgba(0, 0, 0, 0.29);
   -moz-box-shadow: -23px -17px 28px -1px rgba(0, 0, 0, 0.29);

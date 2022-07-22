@@ -1,31 +1,30 @@
-   <div class="box shadow-inner  mt-2" >
-      <div class="fm text-center ">
-         <%= form_with model: @albums do |form|%>
-            <%=form.number_field :user_id , id: :album_user_id, type: :hidden, class: 'form-control', value: current_user.id %>
-               <h3><%= form.label :name ,class:'mt-2'%></h3>
-               <%= form.text_field :name  ,class:"form-control ",placeholder:'name..'%>
-               <h3><%= form.label :description %></h3>
-               <%= form.text_field :description ,class:"form-control",placeholder:'description..'%>
-               <h3><%= form.label :price %></h3>
-               <%= form.text_field :price ,class:"form-control",placeholder:'₹..' %>
-               <h3>Tag</h3>
-               <%= form.text_field :tag_list ,class:"form-control",placeholder:'tags..'%>
-               <br>
-               <h3><%= form.label :cover %></h3>
-               <%= form.file_field :cover %>
-               <h3><%= form.label :images %></h3>
-               <%= form.file_field :images, multiple: true, direct_upload: true %>
-               <br>
-               <h3><%= form.label :publish %></h3>
-               <%= form.check_box :publish  %>
-               <p>*fill publish if you want publicly show your album</p>
-            <%= form.submit style:'background-color:rgba(153, 133, 153, 1)' ,class:'ms-2 mb-3'%><br>
-         <% end %>
-      </div>
+<div class="box shadow-inner  mt-2" >
+   <div class="fm text-center ">
+      <%= form_with model: @albums do |form|%>
+         <%=form.number_field :user_id , id: :album_user_id, type: :hidden, class: 'form-control', value: current_user.id %>
+            <h3><%= form.label :name ,class:'mt-2'%></h3>
+            <%= form.text_field :name  ,class:"form-control ",placeholder:'name..'%>
+            <h3><%= form.label :description %></h3>
+            <%= form.text_field :description ,class:"form-control",placeholder:'description..'%>
+            <h3><%= form.label :price %></h3>
+            <%= form.text_field :price ,class:"form-control",placeholder:'₹..' %>
+            <h3>Tag</h3>
+            <%= form.text_field :tag_list ,class:"form-control",placeholder:'tags..'%>
+            <br>
+            <h3><%= form.label :cover %></h3>
+            <%= form.file_field :cover %>
+            <h3><%= form.label :images %></h3>
+            <%= form.file_field :images, multiple: true, direct_upload: true %>
+            <br>
+            <h3><%= form.label :publish %></h3>
+            <%= form.check_box :publish  %>
+            <p>*fill publish if you want publicly show your album</p>
+         <%= form.submit style:'background-color:rgba(153, 133, 153, 1)' ,class:'ms-2 mb-3'%><br>
+      <% end %>
    </div>
-   <div class="" style="height:200px"></div>
 </div>
-
+<div class="" style="height:200px"></div>
+</div>
 
 
 
