@@ -2,16 +2,18 @@
 
 <div class="container-fluid">
   <div class="row ">
-      <div class="col">
-          <h1 class="text-center my-2">Published Albums</h1>
-          <div class="text-center">
-            <%= search_form_for @q do |f| %>
-            <%= f.search_field :tags_name_cont, placeholder: "search by tag" %>
-            <%= f.search_field :name_cont , placeholder: "search by name" %>
-            <%= f.submit style:'background-color:green' %>
-            <% end %>
-          </div>
+
+    <h1 class="text-center my-2">Published Albums</h1>
+    <div class="text-center">
+      <%= search_form_for @q do |f| %>
+      <%= f.search_field :tags_name_cont,class:"", placeholder: "search by tag" %>
+      <%= f.search_field :name_cont ,class:" my-1 ", placeholder: "search by name" %>
+      <div class="col-sm-12 ">
+      <%= f.submit style:'background-color:green' %>
       </div>
+      <% end %>
+    </div>
+
   </div>
 </div>
 <div class="container-fluid">
