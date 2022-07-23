@@ -18,6 +18,11 @@
   text-align: center;
 }
 
+.img:hover-effect {
+  transform: scale(1.08);
+  transition: 500ms;
+}
+
 .card {
   /* background-color: rgb(176, 210, 176); */
   margin-left: auto;

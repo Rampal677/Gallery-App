@@ -1,8 +1,10 @@
 class AlbumsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   def index
-    @q = Album.ransack(params[:q])
-    @albums = @q.result.includes(:tags).where(publish: true ).page(params[:page])
+    # @q = Album.ransack(params[:q])
+    # @albums = @q.result.includes(:tags).where(publish: true ).page(params[:page])
+    @q = Album.where(publish: true ).ransack(params[:q])
+    @albums = @q.result.includes(:tags).page(params[:page])
   end
 
   def myalbum
@@ -55,11 +57,5 @@ class AlbumsController < ApplicationController
   private
   def album_params
     params.require(:album).permit(:name,:description, :price,:user_id,:publish,:cover, :tag_list,:tag_ids ,images: [],)
-  end
-  def if_login
-    unless signed_in?
-      flash[:error] = "You must be logged in to access this section"
-      redirect_to root_path
-    end
   end
 end
