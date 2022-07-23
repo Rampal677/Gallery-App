@@ -1,6 +1,6 @@
 <div class="box shadow-inner  mt-2" >
    <div class="fm text-center ">
-      <%= form_with model: @albums do |form|%>
+      <%= form_with model: @album do |form|%>
          <%=form.number_field :user_id , id: :album_user_id, type: :hidden, class: 'form-control', value: current_user.id %>
             <h3><%= form.label :name ,class:'mt-2'%></h3>
             <%= form.text_field :name  ,class:"form-control ",placeholder:'name..'%>

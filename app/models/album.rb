@@ -7,8 +7,8 @@ class Album < ApplicationRecord
   validates :name,:price, :description, presence: true
   validates :name, length: { in: 2..15 }
   validates :price, length: { in: 1..6 }
-
   paginates_per 5
+
   def self.tagged_with(name)
     Tag.find_by!(name: name).posts
   end
