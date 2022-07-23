@@ -1,5 +1,5 @@
 class AlbumsController < ApplicationController
-  before_action :permission, only: [:destroy, :edit]
+  before_action :authenticate_user! ,except: [:index,:show]
   after_action :if_login, only: [:edit,:update]
   def index
     @q = Album.ransack(params[:q])
@@ -53,15 +53,6 @@ class AlbumsController < ApplicationController
   private
   def album_params
     params.require(:album).permit(:name,:description, :price,:user_id,:publish,:cover, :tag_list,:tag_ids ,images: [],)
-  end
-
-  def permission
-    unless signed_in?
-      if @albums.user_id == current_user.id?
-        flash[:error] = "You must be logged in to access this section"
-        redirect_to new_user_session_path
-      end
-    end
   end
 
   def if_login
